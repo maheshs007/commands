@@ -1,4 +1,3 @@
-```markdown
 # Kubernetes API Server HTTP Errors and Their Reasons
 
 As a Kubernetes administrator with over 5+ years of experience, I’ve encountered and resolved many common API server errors. These errors often arise from misconfigurations, misunderstandings, or operational issues. Logging and checking Kubernetes events is fundamental for effective troubleshooting in Kubernetes administration. Here's a guide to help you navigate through common errors and their causes.
@@ -39,7 +38,7 @@ The API server verified the identity but determined the requester lacks the nece
 ---
 
 ### 404 Not Found
-**Reason:** Requested resource or endpoint not found.  
+**Reason:** Requested resource or endpoint not found.
 
 **Possible Causes:**
 - Typo in the resource name or namespace in the `kubectl` command.
@@ -52,7 +51,7 @@ The API server verified the identity but determined the requester lacks the nece
 ---
 
 ### 422 Unprocessable Entity
-**Reason:** Request is syntactically correct but semantically invalid.  
+**Reason:** Request is syntactically correct but semantically invalid.
 
 **Possible Causes:**
 - Invalid YAML or JSON file structure.
@@ -66,7 +65,7 @@ The API server verified the identity but determined the requester lacks the nece
 ---
 
 ### 500 Internal Server Error
-**Reason:** A server-side issue occurred while processing the request.  
+**Reason:** A server-side issue occurred while processing the request.
 
 **Possible Causes:**
 - Misconfigured Kubernetes component (e.g., controller-manager, scheduler).
@@ -79,7 +78,7 @@ The API server verified the identity but determined the requester lacks the nece
 ---
 
 ### 503 Service Unavailable
-**Reason:** The API server is temporarily unavailable to process requests.  
+**Reason:** The API server is temporarily unavailable to process requests.
 
 **Possible Causes:**
 - High CPU or memory usage on the API server.
@@ -138,6 +137,7 @@ The API server verified the identity but determined the requester lacks the nece
 ---
 
 ## Key Advice for Troubleshooting
+
 1. **Check Events:** Use `kubectl get events` or `kubectl describe` commands to investigate cluster-level events.
 2. **Enable Logging:** Review logs from key components like the API server, kubelet, controller-manager, and scheduler for detailed insights.
 3. **Monitor Resources:** Always monitor resource usage (CPU, memory) of cluster components and nodes to prevent resource exhaustion.
@@ -145,4 +145,3 @@ The API server verified the identity but determined the requester lacks the nece
 5. **Audit Permissions:** Regularly review RBAC policies to ensure the principle of least privilege is followed.
 
 Logging and event monitoring are the foundational tools for effective Kubernetes administration. Stay proactive by continuously improving cluster observability and maintaining a healthy cluster environment.
-```
