@@ -1,4 +1,3 @@
-```markdown
 # Creating a Kubernetes Cluster Using Chef with Cilium CNI and kube-proxy Replacement
 
 This guide explains how to create a Kubernetes cluster using Chef, configured to use **Cilium** as the CNI and to replace `kube-proxy` with Cilium's eBPF-based implementation for improved network performance and security.
@@ -128,8 +127,6 @@ This guide explains how to create a Kubernetes cluster using Chef, configured to
     bpftool feature
     ```
 
----
-
 ### 2. **Worker Node Fails to Join**
 - **Cause:** Token expired or control plane is unreachable.
 - **Fix:**
@@ -138,8 +135,6 @@ This guide explains how to create a Kubernetes cluster using Chef, configured to
     kubeadm token create --print-join-command
     ```
   - Verify network connectivity to the control plane.
-
----
 
 ### 3. **Cluster Networking Issues**
 - **Cause:** Misconfigured Cilium or missing kube-proxy replacement settings.
@@ -150,8 +145,6 @@ This guide explains how to create a Kubernetes cluster using Chef, configured to
     ```
   - Reapply Cilium with the correct settings.
 
----
-
 ### 4. **Cilium Fails to Replace kube-proxy**
 - **Cause:** Node's kernel or environment does not support required eBPF features.
 - **Fix:**
@@ -161,8 +154,6 @@ This guide explains how to create a Kubernetes cluster using Chef, configured to
     bpftool feature
     ```
   - Upgrade the kernel if required.
-
----
 
 ### 5. **Chef Run Fails**
 - **Cause:** Errors in the cookbook or dependency issues.
@@ -181,4 +172,3 @@ This guide explains how to create a Kubernetes cluster using Chef, configured to
 5. **Logging**: Enable detailed logging for Cilium and API server for better debugging.
 
 This approach ensures a streamlined Kubernetes cluster setup with improved network performance and observability using Cilium and Chef.
-```
